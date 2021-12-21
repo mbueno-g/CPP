@@ -9,15 +9,15 @@ The goal of these C++ modules is to learn the basic of an object oriented progra
 
 [00 Classes](#classes)
 
-* [00 Create a clase](#create-a-class)
+* [Create a clase](#create-a-class)
 
-* [00 Create an object](#create-an-object)
+* [Create an object](#create-an-object)
 
-* [00 Define a method](#define-a-method)
+* [Define a method](#define-a-method)
 
-* [00 Constructors](#constructors)
+* [Constructors](#constructors)
 
-* [00 Destructors](#destructors)
+* [Destructors](#destructors)
 
 
 ## CPP00
