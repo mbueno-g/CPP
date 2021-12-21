@@ -1,10 +1,18 @@
 # CPP
 
+[Introduction](#introduction)
+
+[C++ input/output](#c++_input/output)
+
 The goal of these C++ modules is to learn the basic of an object oriented programming language.
+
+
 
 ## CPP00
 
-:collision: **C++ input/output**
+## Introduction
+
+## C++ input/output
 
 In C++, there's no specific syntax for streaming data input or output, i.e. we use a library 
 of functions (``include <iostream>``) part of the C++ standard library.
