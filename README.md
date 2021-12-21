@@ -9,7 +9,7 @@ The goal of these C++ modules is to learn the basic of an object oriented progra
 
 [00 Classes](#classes)
 
-* [00 Create a clase](#create-an-class)
+* [00 Create a clase](#create-a-class)
 
 * [00 Create an object](#create-an-object)
 
