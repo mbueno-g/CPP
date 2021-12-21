@@ -71,6 +71,7 @@ However, to access a private class members we need to declare public methods (se
 class MyClass
 {
     public:
+        MyClass();
         int     x;
         int    get_y(void);
         void    set_y(int s);
@@ -116,4 +117,16 @@ There're two ways to define a class function:
 1. Inside class definition: these functions are inline by default
 2. Outside class definition: we need to use the scope resolution operator ``::`` along with class name and function name: ```<return_type> <class_name>::<function_name> ``
 
+
+  - Constructors
+
+A constructor is a type of method which initialized objects of a class and it is automatically called when an object is instanced. 
+Moreover, constructors have the same name as the class itself, they don't have return type and they are public methods. As we know, if the constructor is not specify, the C++ compiler generates default constructor for object.
+
+There're three types of constructors:
+| Type | Declaration | Object|
+|:----:|:-----------:|:-----:|
+|Default constructor| ``<name_class>()``| ``<name_class> <name_object>;`` |
+|Parameterized constructor | ``<name_class>(<parameters>) `` |  ``<name_class> <name_object>(<parameters_values>);`` -- Implicit call ; ``<name_class> <name_object> = <name_class>(<parameters_values>);``-- Explicit call |
+|Copy constructor|``<name_method>(<parameters>)``| ``<name_class> <name_object> = <name_method>(<parameters_values>);``
 
