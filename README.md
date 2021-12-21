@@ -11,11 +11,12 @@ of functions (``include <iostream>``) part of the C++ standard library.
 This library uses the objects ``cin``, ``cout`` and ``cerr`` for sending data to and from the standard
 streams input, output and error.
 
-As part of the C++ standard library, these objects belong to the **std namespace**, a set of names used
-to group and identify objects in order to avoid name collisions. 
+:collision: **std namespace**
+
+As part of the C++ standard library, these objects belong to the std namespace, a set of names used to group and identify objects in order to avoid name collisions. 
 So within a global namespace (an unnamed namespace), the std namespace's identifiers must be called in
 a particular way ("using their full name") to be accessed:
-- Prefixed: ``std::cin``
+- Prefixed using the scope resolution operator:  ``std::cin``
 - Adding ``using namespace std;`` as a header
 
 Here's the canonical "Hello, World!" program in C++:
@@ -27,3 +28,92 @@ int main()
     std::cout << "Hello, World!" << std::endl;
 }
 ```
+
+:collision: **Classes**
+
+C++ is an object-oriented programming language so everything is about classes, objects, attributes and methods.
+| Concept | Meaning |
+|:-------:|:-------:|
+| **class** | A class is a data type defined by users|
+|**object**| An object is an instance of a class|
+|**attribute**| An attribute is a class member, i.e. a variable declared within a class |
+|**method**|A method is a member function used to manipulate the attributes|
+
+
+  - Class creation
+```C++
+class <name_class>
+{
+    public:
+        <class_members>
+    private:
+        <class_members>
+    protected:
+        <class_members>
+};
+```
+**Public** and **private** keywords are access specifiers that define whether a class member (attributes and methods) can be access and modified from outside a class or not, respectively.
+There's a third access specifier **protected** that allows members to be accessed only by inherited classes.
+
+By default, if any access specifier is specified, all members of a class are private. This is considered a good practice called **encapsulation**. This method is about declaring your class attributes as private and provide public get and set methods if you want others to modify your class members.
+    
+  - Create an object
+  
+When a class is defined, only the specification is defined but no memory is allocated. To create an object means to allocate this memory:
+```C++
+<name_class> <name_object>
+```
+To access the class atributes with public access the dot operator is used: ``<name_object>.<public_class_member> ``.
+
+However, to access a private class members we need to declare public methods (set and get methods), let's see an example:
+
+```C++
+class MyClass
+{
+    public:
+        int     x;
+        int    get_y(void);
+        void    set_y(int s);
+    private:
+        int y;
+};
+
+MyClass::MyClass()
+{
+    x = 0;
+    y = 0;
+}
+
+int    MyClass::get_y()
+{
+    return y;
+}
+
+void    MyClass::set_y(int s)
+{
+    y = s;
+}
+
+int main()
+{
+    MyClass obj;
+    
+    obj.x = 1;
+    obj.set_y(2);
+    std::cout << "The value of x is: " << obj.x << std::endl;
+    std::cout << "The value of y is: " << obj.get_y() << std::endl;
+    return 0;
+}
+```
+Output:
+```
+The value of x is: 1
+The value of y is: 2
+```
+   - Define a method
+  
+There're two ways to define a class function:
+1. Inside class definition: these functions are inline by default
+2. Outside class definition: we need to use the scope resolution operator ``::`` along with class name and function name: ```<return_type> <class_name>::<function_name> ``
+
+
