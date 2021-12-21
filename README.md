@@ -130,3 +130,6 @@ There're three types of constructors:
 |Parameterized constructor | ``<name_class>(<parameters>) `` |  ``<name_class> <name_object>(<parameters_values>);`` -- Implicit call ; ``<name_class> <name_object> = <name_class>(<parameters_values>);``-- Explicit call |
 |Copy constructor|``<name_method>(<parameters>)``| ``<name_class> <name_object> = <name_method>(<parameters_values>);``
 
+  - Destructors
+
+Destructors are another type of method that is called when the scope of the object ends. As constructors, they don't have return type and they are public methods. However, they don't have exactly the same name as the class, and ``~`` is added as a prefix.
