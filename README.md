@@ -27,6 +27,8 @@ The goal of these C++ modules is to learn the basic of an object oriented progra
 
 * [References vs pointer](#references-vs-pointers)
 
+[01 Inheritance](#inheritance)
+
 ## CPP00
 
 ### Input-output
@@ -223,3 +225,5 @@ int &S1 = S0;
 5. References cannot be NULL
 6. A reference must be initialized when declared
 7. Members of an object reference can be accessed with dot operator, unlike pointers where arrow operator (->) is needed
+
+### Inheritance
