@@ -227,3 +227,72 @@ int &S1 = S0;
 7. Members of an object reference can be accessed with dot operator, unlike pointers where arrow operator (->) is needed
 
 ### Inheritance
+
+Inheritance is the capability of a class to devide properties and characteristics from another class.
+  - Sub Class / Derived Class : class that inherits from another class
+  - Base Class / Super Class : class whose properties are inherited by sub class
+
+The syntax for implementing inheritance is:
+```C++
+class <subclass_name> : <access_mode> <baseclass_name>
+{
+    //class members
+}
+```
+❗A sub class doesn't inherit access to private data members but inherits a full parent object with all private members.
+
+  - #### Modes of Inheritance
+
+<table>
+    <tr>
+        <th rowspan = "2"> Access specifier base class </th>
+        <th colspan = "3"> Type of inheritance </th>
+    </tr>
+    <tr align=center>
+        <th> Public </th>
+        <th> Protected </th>
+        <th> Private </th>
+    </tr>
+    <tr align=center>
+        <th> Public </td>
+        <td> Public </td>
+        <td> Protected </td>
+        <td> Private </td>
+    </tr>
+    <tr align=center>
+        <th> Protected </td>
+        <td> Protected </td>
+        <td>Protected </td>
+        <td> Private </td>
+    </tr>
+    <tr align=center>
+       <th> Private </td>
+        <td> Not accessible</td>
+        <td> Not accessible </td>
+        <td> Not accessible </td>
+    </tr>
+</table>
+
+
+  - #### Types of inherence
+
+1. Single inheritance: a class is allowed to inherit from only one class
+```
+class <subclass_name> : <access_mode> <baseclass_name>
+{
+    <class_members>
+}
+```
+2. Multiple inheritance: a class can inheritance from more than one class
+```
+class <subclass_name> : <access_mode> <baseclass_name1>, <access_mode> <baseclass_name2>,...
+{
+    <class_members>
+}
+```
+3. Multilevel inheritance: a derived class is inherited by another derived class
+4. Hierarchical inheritance: more than one derived class is created from a single base class
+
+
+
+
