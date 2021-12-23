@@ -241,6 +241,10 @@ class <subclass_name> : <access_mode> <baseclass_name>
 ```
 ❗A sub class doesn't inherit access to private data members but inherits a full parent object with all private members.
 
+<!--
+When you initialize an object of a derived class, the base class part has to be constructed first. If you don't initialize it yourself in the derived class' constructor by calling one of its constructors, the compiler will attempt use the default constructor of the base class. In your case the default constructor is not defined because you already provided a custom constructor.
+-->
+
   - #### Modes of Inheritance
 
 <table>
