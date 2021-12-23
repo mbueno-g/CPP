@@ -19,6 +19,13 @@ The goal of these C++ modules is to learn the basic of an object oriented progra
 
 * [Destructors](#destructors)
 
+[01 Memory allocation](#memory-allocation)
+
+[01 Delete memory](#delete-memory)
+
+[01 References](#references)
+
+* [References vs pointer](#references-vs-pointers)
 
 ## CPP00
 
@@ -151,3 +158,68 @@ There're three types of constructors:
   - #### Destructors
 
 Destructors are another type of method that is called when the scope of the object ends. As constructors, they don't have return type and they are public methods. However, they don't have exactly the same name as the class, and ``~`` is added as a prefix.
+
+## CPP01
+
+### Memory allocation
+
+Allocate N objects at once
+
+
+### Delete memory
+
+
+### References
+
+A reference is a variable with an alternative name for an existing variable. 
+This type of variables are declared as references by putting & in the declaration:
+```
+<type>& <variable_name>
+```
+They have different purposes:
+1. Modify the passed parameters in a function: If a function receives a reference to a variable, it can modify the value of the variable. 
+```C++
+#include <iostream>
+
+int main()
+{
+  int  x = 10;
+  int& ref = x;
+  
+  // Value of x is now changed to 20
+  ref = 20;
+  
+  // Value of x is now changed to 30
+  x = 30;
+  
+  return 0;
+}
+```
+2. Avoid copying large objects
+
+  - #### References vs pointers
+
+Although, both references and pointers have the purposes described below, there're some differences:
+1. A pointer can be declared as void
+```C++
+int a = 10;
+void *ptr = &a;
+void& ref = a; // not valid
+```
+2. The pointer variable has n-levels/multiple levels of indirection, whereas the reference variable has only one single level of indirection.
+```C++
+int i = 10;
+int *p = &i; //single pointer
+int **pt = &p; //double pointer
+int ***ptr = &pt; //triple pointer
+
+int a = 5; 
+int &S = a; // all this references refer to the same variable
+int &S0 = S;
+int &S1 = S0;
+```
+3. Referenced variable cannot be updated
+4. Once a reference is created, it cannot be later made to reference another object
+5. References cannot be NULL
+6. A reference must be initialized when declared
+7. Members of an object reference can be accessed with dot operator, unlike pointers where arrow operator (->) is needed
