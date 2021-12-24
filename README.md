@@ -29,6 +29,8 @@ The goal of these C++ modules is to learn the basic of an object oriented progra
 
 [01 Inheritance](#inheritance)
 
+
+
 ## CPP00
 
 ### Input-output
@@ -298,5 +300,6 @@ class <subclass_name> : <access_mode> <baseclass_name1>, <access_mode> <baseclas
 4. Hierarchical inheritance: more than one derived class is created from a single base class
 
 
+<!--  constructor must initialize base class -->
 
 
