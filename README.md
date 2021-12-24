@@ -317,8 +317,8 @@ The fstream library provides all the methods needed for file handling. It also p
 |:-----:|:------:|:-----------:|
 | Open| ``<fstream_object>.open(const char *file_name, mode);``|Open a file with an optional mode: ios::app (append), ios::ate, ios::in (read), ios::out (write), ios::trunc (truncate). Modes can be combined using or operator (|)|
 | Close|``<fstream_object>.close();``|Close a file |
-| Write|||
-| Read |||
+| Write|`` <fstream_object> << <string to be written>``|To write in a file the stream insertion operator (<<) is used. The text to be written must be within double-quotes.|
+| Read |``  <fstream_object> >> <char read>``|To read from a file the stream extraction operator (>>) is used.|
 
 
 
