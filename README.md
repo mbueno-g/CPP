@@ -1,5 +1,7 @@
 # CPP
 
+🚧 WIP
+
 The goal of these C++ modules is to learn the basic of an object oriented programming language.
 
 
@@ -28,6 +30,8 @@ The goal of these C++ modules is to learn the basic of an object oriented progra
 * [References vs pointer](#references-vs-pointers)
 
 [01 Inheritance](#inheritance)
+
+[01 Files](#files)
 
 ## CPP00
 
@@ -297,6 +301,24 @@ class <subclass_name> : <access_mode> <baseclass_name1>, <access_mode> <baseclas
 3. Multilevel inheritance: a derived class is inherited by another derived class
 4. Hierarchical inheritance: more than one derived class is created from a single base class
 
+
+<!--  constructor must initialize base class -->
+
+### Files
+
+The fstream library provides all the methods needed for file handling. It also provides us with 3 classes for working with files:
+- ofstream : this class represents an output stream -> used for creating files, writing information to files...
+- ifstream : this class represents an input stream -> used for reading information from data files...
+- fstream : this class represents a file stream (ofstream + ifstream).
+
+  - #### Open, close, write and read files
+
+| Action| Method | Description |
+|:-----:|:------:|:-----------:|
+| Open| ``<fstream_object>.open(const char *file_name, mode);``|Open a file with an optional mode: ios::app (append), ios::ate, ios::in (read), ios::out (write), ios::trunc (truncate). Modes can be combined using or operator (|)|
+| Close|``<fstream_object>.close();``|Close a file |
+| Write|`` <fstream_object> << <string to be written>``|To write in a file the stream insertion operator (<<) is used. The text to be written must be within double-quotes.|
+| Read |``  <fstream_object> >> <char read>``|To read from a file the stream extraction operator (>>) is used.|
 
 
 
