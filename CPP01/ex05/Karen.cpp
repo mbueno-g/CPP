@@ -38,6 +38,7 @@ void Karen::complain(std::string level)
     map_t::const_iterator it = m.find(level);
     if (it == m.end()) return;
     (this->*(it->second))();
-    //void (Karen::* f)(void) =&Karen::(m.find(level));
+    //void (Karen:: *f)(void) = m.find(level);
+    //(*f)();
     //(m.f)();
 }
