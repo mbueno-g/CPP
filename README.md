@@ -21,6 +21,8 @@ The goal of these C++ modules is to learn the basic of an object oriented progra
 
 * [Destructors](#destructors)
 
+* [This pointer](#this-pointer)
+
 [01 Memory allocation](#memory-allocation)
 
 [01 Delete memory](#delete-memory)
