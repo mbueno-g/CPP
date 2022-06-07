@@ -23,6 +23,8 @@ The goal of these C++ modules is to learn the basic of an object oriented progra
 
 * [this pointer](#this-pointer)
 
+* [Initialization list](#initialization-list)
+
 [01 Memory allocation](#memory-allocation)
 
 [01 Delete memory](#delete-memory)
@@ -169,6 +171,26 @@ Destructors are another type of method that is called when the scope of the obje
 
   - #### this pointer
 The **this** pointer is a pointer used to refer to the invoking object in a member method: ``this-><class_member>``
+
+  - #### Initialization list
+Initialization list is used to initialized the members of a class and it follows the constructor separated by a colon:
+
+```c++
+Class Example{
+    int x;
+    int y;
+    
+    Example(int i, int j) : x(i), y(j) {}
+    /* This is the same as:
+            Example(int i, int j){
+                x = i;
+                y = j;
+            }
+    */
+
+};
+
+```
 
 
 
