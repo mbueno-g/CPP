@@ -191,7 +191,7 @@ Class Example{
 };
 
 ```
-
+There're cases where the initialization of class members can't be done inside the constructors and initialization lists must be used, for example when we want to initialize a const or a reference member. 
 
 
 ## CPP01
