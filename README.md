@@ -21,7 +21,7 @@ The goal of these C++ modules is to learn the basic of an object oriented progra
 
 * [Destructors](#destructors)
 
-* [This pointer](#this-pointer)
+* [this pointer](#this-pointer)
 
 [01 Memory allocation](#memory-allocation)
 
@@ -167,7 +167,7 @@ There're three types of constructors:
 
 Destructors are another type of method that is called when the scope of the object ends. As constructors, they don't have return type and they are public methods. However, they don't have exactly the same name as the class, and ``~`` is added as a prefix.
 
-  - #### This pointer
+  - #### this pointer
 The **this** pointer is a pointer used to refer to the invoking object in a member method: ``this-><class_member>``
 
 
