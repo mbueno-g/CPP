@@ -15,7 +15,7 @@ int	main(int argc, char	**argv)
 
 	i = 1;
 	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" <<'\n';
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << '\n';
 	else
 	{
 		while (i < argc)

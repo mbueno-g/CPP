@@ -1,7 +1,6 @@
 
 #include "phonebook.hpp"
 
-//Constructor
 PhoneBook::PhoneBook()
 {
     last_contact = 0;
@@ -40,6 +39,6 @@ void	PhoneBook::show_phonebook()
 		// limpiar la bandera de error y el buffer para que no falle en el futuro la entrada
 		std::cin.clear();
 		std::cin.ignore(31,'\n'); // elimina o x caracteres del buffero  hasta que encuentra un salto de linea
-		std::cout << "No contact with that index!" << std::endl;
+		std::cout << "There's no contact with that index!" << std::endl;
 	}
 }
