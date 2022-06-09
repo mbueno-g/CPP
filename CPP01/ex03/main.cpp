@@ -1,9 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbueno-g <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/09 15:01:36 by mbueno-g          #+#    #+#             */
+/*   Updated: 2022/06/09 15:31:01 by mbueno-g         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 #include "Weapon.hpp"
-
-// por que se soluciona poniendo Weapon();
 
 // Weapon is store as a pointer in HumanB because HumanB may not always have
 // a Weapon so the pointer can be NULL
