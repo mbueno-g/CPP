@@ -1,8 +1,6 @@
 
 #include "Zombie.hpp"
 
-// ¿Cada zombie tiene que tener su nombre?
-
 int main()
 {
     Zombie *z;
