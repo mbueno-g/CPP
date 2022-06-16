@@ -6,7 +6,7 @@
 /*   By: mbueno-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:51:21 by mbueno-g          #+#    #+#             */
-/*   Updated: 2022/06/14 11:52:07 by mbueno-g         ###   ########.fr       */
+/*   Updated: 2022/06/16 15:48:44 by mbueno-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	Account::_totalAmount = 0;
 int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
 
-Account::Account(int initial_deposit)
+Account::Account(int initial_deposit) : _nbDeposits(0) , _nbWithdrawals(0)
 {
 	this->_accountIndex = this->getNbAccounts();
 	this->_amount = initial_deposit;

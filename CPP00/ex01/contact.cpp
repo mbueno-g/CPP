@@ -6,24 +6,35 @@
 /*   By: mbueno-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:50:08 by mbueno-g          #+#    #+#             */
-/*   Updated: 2022/06/09 14:50:10 by mbueno-g         ###   ########.fr       */
+/*   Updated: 2022/06/16 16:08:18 by mbueno-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contact.hpp"
 
+void check_cin(void)
+{
+	if(std::cin.eof())
+		exit(0);
+}
+
 void    Contact::new_contact()
 {
     std::cout << "First name: ";
-    std::cin >> this->first_name;
-    std::cout << "Last name: ";
-    std::cin >> this->last_name;
+	std::getline(std::cin, this->first_name);
+	check_cin();
+	std::cout << "Last name: ";
+	std::getline(std::cin, this->last_name);
+	check_cin();
     std::cout << "Nickname: ";
-    std::cin >> this->nickname;
+	std::getline(std::cin, this->nickname);
+	check_cin();
     std::cout << "Phone number: ";
-    std::cin >> this->phone;
+	std::getline(std::cin, this->phone);
+	check_cin();
     std::cout << "Darkest secret: ";
-    std::cin >> this->darkest_secret; 
+	std::getline(std::cin, this->darkest_secret);
+	check_cin();
 }
 
 void	Contact::print_contact(std::string str)

@@ -6,7 +6,7 @@
 /*   By: mbueno-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:50:30 by mbueno-g          #+#    #+#             */
-/*   Updated: 2022/06/09 14:50:33 by mbueno-g         ###   ########.fr       */
+/*   Updated: 2022/06/16 16:08:21 by mbueno-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void PhoneBook::add_contact_phonebook()
 void	PhoneBook::show_phonebook()
 {
 	int	i;
-	int	j;
+	std::string j;
+	int	k;
 
 	i = 0;
 	if (num_contact)
@@ -41,15 +42,14 @@ void	PhoneBook::show_phonebook()
 		i++;
 	}
 	std::cout << "Introduce the index: ";
-	std::cin >> j;
-	if (j && j <= num_contact)
-		contacts[j - 1].show_contact(2, j);
+	std::getline(std::cin, j);
+	if (std::cin.eof())
+		exit(0);
+	if (j.length() != 1)
+		return ;
+	k = j[0] - '0';
+	if (k && k <= num_contact)
+		contacts[k - 1].show_contact(2, k);
 	else
-	{
-		//Si se produce un error al tomar la entrada de cin hay que 
-		// limpiar la bandera de error y el buffer para que no falle en el futuro la entrada
-		std::cin.clear();
-		std::cin.ignore(31,'\n'); // elimina o x caracteres del buffero  hasta que encuentra un salto de linea
 		std::cout << "There's no contact with that index!" << std::endl;
-	}
 }

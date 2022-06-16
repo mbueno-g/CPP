@@ -6,7 +6,7 @@
 /*   By: mbueno-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:50:23 by mbueno-g          #+#    #+#             */
-/*   Updated: 2022/06/09 14:50:25 by mbueno-g         ###   ########.fr       */
+/*   Updated: 2022/06/16 16:08:19 by mbueno-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ int	main(void)
 	while (1)
 	{
         std::cout << "Introduce ADD, SEARCH or EXIT: ";
-		std::cin >> command;
+		std::getline(std::cin, command);
+		if (std::cin.eof())
+			exit(0);
 		if (command == "EXIT")
 			break;
 		else if (command == "ADD")
