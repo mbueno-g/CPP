@@ -7,7 +7,6 @@
 
 class Karen
 {
-    typedef std::map<std::string,void(Karen::*)()> map_t;
     private:
         void debug(void);
         void info(void);

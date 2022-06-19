@@ -34,26 +34,14 @@ void Karen::error(void)
     std::cout << "This is unacceptable, I want to speak to the manager now." << std::endl;
 }
 
-void    Karen::call_method(std::string level, map_t& m)
-{
-    map_t::const_iterator it = m.find(level);
-    if (it == m.end()) return;
-    (this->*(it->second))();
-}
-
-
 void Karen::complain(std::string level)
 {
-    map_t       m;
     std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	void (Karen::*function[4]) (void) = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
     int         i;
 
     i = 0;
-    m["DEBUG"] = &Karen::debug;
-    m["INFO"] = &Karen::info;
-    m["WARNING"] = &Karen::warning;
-    m["ERROR"] = &Karen::error;
-    while (i < 3)
+    while (i < 4)
     {
         if (levels[i] == level)
             break;
@@ -62,13 +50,14 @@ void Karen::complain(std::string level)
     switch(i)
     {
     case 0:
-        call_method(levels[0], m);
+		(this->*function[0]) ();
     case 1:
-        call_method(levels[1], m);
+		(this->*function[1]) ();
     case 2:
-        call_method(levels[2], m);
+		(this->*function[2]) ();
     case 3:
-        call_method(levels[3], m);
+		(this->*function[3]) ();
+		break;
     case 4:
         std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
     }
