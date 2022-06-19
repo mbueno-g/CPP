@@ -6,7 +6,7 @@
 /*   By: mbueno-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:30:28 by mbueno-g          #+#    #+#             */
-/*   Updated: 2022/06/16 17:58:51 by mbueno-g         ###   ########.fr       */
+/*   Updated: 2022/06/16 16:45:13 by mbueno-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,14 @@
 int	main(void)
 {
 	Fixed a;
-	Fixed const b( 10 ); 
-	Fixed const c( 42.42f ); 
-	Fixed const d( b );
+	Fixed b(a);
+	Fixed c;
 
-	a = Fixed( 1234.4321f );
+	c = b;
 
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
-	
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
 
 	return 0;
 }
