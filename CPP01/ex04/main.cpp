@@ -6,7 +6,7 @@
 /*   By: mbueno-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 15:33:12 by mbueno-g          #+#    #+#             */
-/*   Updated: 2022/06/09 15:46:24 by mbueno-g         ###   ########.fr       */
+/*   Updated: 2022/06/19 10:08:31 by mbueno-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@ int error(std::string message)
     return (1);
 }
 
-// replace every occurrence of s1 with s2 from the file in and writes it in out
-// ¿por que hay que recibir in/out por referencia?
-// Tiene que reconocer hola en holahol??
 int    replace(std::string s1, std::string s2, std::ifstream& in, std::ofstream& out)
 {
     std::string line;
@@ -57,7 +54,7 @@ int main(int argc, char **argv)
     std::ofstream out;
 
     if (argc != 4)
-        return (error("Wrong number of arguments"));
+        return (error("Wrong number of arguments: ./replace filename s1 s2"));
     filename = argv[1];
     s1 = argv[2];
     s2 = argv[3];
