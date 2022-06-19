@@ -6,11 +6,21 @@
 /*   By: mbueno-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 15:47:32 by mbueno-g          #+#    #+#             */
-/*   Updated: 2022/06/09 15:54:49 by mbueno-g         ###   ########.fr       */
+/*   Updated: 2022/06/19 11:09:54 by mbueno-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
+
+Karen::Karen()
+{
+	std::cout<< "Karen has been created" << std::endl;
+}
+
+Karen::~Karen()
+{
+	std::cout<< "Karen has been destroyed" << std::endl;
+}
 
 void Karen::debug(void)
 {
@@ -40,16 +50,16 @@ void Karen::error(void)
 
 void Karen::complain(std::string level)
 {
-    map_t m;
+	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	int			i;
+	
+	void (Karen::*function[4]) (void) = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
 
-    m["debug"] = &Karen::debug;
-    m["info"] = &Karen::info;
-    m["warning"] = &Karen::warning;
-    m["error"] = &Karen::error;
-    map_t::const_iterator it = m.find(level);
-    if (it == m.end()) return;
-    (this->*(it->second))();
-    //void (Karen:: *f)(void) = m.find(level);
-    //(*f)();
-    //(m.f)();
+	i = 0;
+	while (i < 4)
+	{
+		if (levels[i] == level)
+			(this->*function[i]) ();
+		i++;
+	}
 }

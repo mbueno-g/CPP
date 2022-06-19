@@ -6,7 +6,7 @@
 /*   By: mbueno-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 15:33:12 by mbueno-g          #+#    #+#             */
-/*   Updated: 2022/06/19 10:08:31 by mbueno-g         ###   ########.fr       */
+/*   Updated: 2022/06/19 10:53:10 by mbueno-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ int    replace(std::string s1, std::string s2, std::ifstream& in, std::ofstream&
 {
     std::string line;
     int pos;
-    int aux;
+    size_t	aux;
 
     if (!getline(in, line, '\0'))
         return (error("Error while reading"));
     pos = 0;
     while (1)
     {
-        aux = line.find(s1,pos);
-        if (aux == -1)
+        aux = line.find(s1,0);
+        if (aux == std::string::npos)
         {
             out << line;
             break;
@@ -40,7 +40,6 @@ int    replace(std::string s1, std::string s2, std::ifstream& in, std::ofstream&
         out << line.substr(0, aux);
         out << s2; 
         line = line.substr(aux + s1.length(), line.length());
-        pos = aux;
     }
     return (0);
 }
@@ -49,26 +48,24 @@ int main(int argc, char **argv)
 {
     std::string s1;
     std::string s2;
-    std::string filename;
-    std::ifstream in;
-    std::ofstream out;
 
     if (argc != 4)
         return (error("Wrong number of arguments: ./replace filename s1 s2"));
-    filename = argv[1];
     s1 = argv[2];
     s2 = argv[3];
-    if (s1 == "" || s2 == "")
+	std::string	filename(argv[1]);
+	if (filename == "" | s1 == "" || s2 == "")
         return (error("Empty string"));
-    in.open(filename.c_str(), std::ios::in);// converts a string into a char *
-    if (!in)
+	std::ifstream	ifs(argv[1]);
+	if (!ifs)
         return (error("Error opening " + filename));
-    out.open((filename + ".replace").c_str(), std::ios::out);
-    if (!out)
-        return (error("Error creating "+ filename + ".replace"));
-    if (replace(s1, s2, in, out))
+	filename = filename + ".replace";
+    std::ofstream	ofs(filename);
+	if (!ofs)
+        return (error("Error creating "+ filename));
+    if (replace(s1, s2, ifs, ofs))
         return (1);
-    in.close();
-    out.close();
+    ifs.close();
+    ofs.close();
     return (0);
 }
