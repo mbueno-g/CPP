@@ -6,11 +6,11 @@
 #    By: mbueno-g <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/09 17:34:09 by mbueno-g          #+#    #+#              #
-#    Updated: 2022/06/19 19:22:27 by mbueno-g         ###   ########.fr        #
+#    Updated: 2022/07/06 16:41:54 by mbueno-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fragTrap
+NAME = diamondTrap
 CPP = clang++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 RM = rm -f 
